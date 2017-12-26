@@ -1,14 +1,14 @@
 {
-  "name": "url-handler",
-  "version": "1.0.0",
-  "description": "",
+  "name": "dumb-url-handler",
+  "version": "1.0.1",
+  "description": "use it on AWS lambda",
   "main": "index.js",
   "scripts": {
     "test": "$(npm bin)/mocha --require intelli-espower-loader test/index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "rchaser53",
+  "license": "MIC",
   "devDependencies": {
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^4.0.1",
