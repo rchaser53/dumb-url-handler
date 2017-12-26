@@ -1,6 +1,6 @@
 {
   "name": "dumb-url-handler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "use it on AWS lambda",
   "main": "index.js",
   "scripts": {

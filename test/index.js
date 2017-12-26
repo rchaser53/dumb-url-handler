@@ -59,5 +59,21 @@ describe('url-handler', function() {
 
       assert.equal(addQuery('http://localhost/yyy.js', {}), 'http://localhost/yyy.js?');
     });
+
+    it('should remove undefined or null value query', function() {
+      assert.equal(addQuery('http://localhost/yyy.js', {
+        abc: null
+      }), 'http://localhost/yyy.js?');
+
+      assert.equal(addQuery('http://localhost/yyy.js', {
+        abc: undefined
+      }), 'http://localhost/yyy.js?');
+
+      assert.equal(addQuery('http://localhost/yyy.js', {
+        abc: 123,
+        def: undefined,
+        ghi: "nyan"
+      }), 'http://localhost/yyy.js?abc=123&ghi=nyan');
+    })
   });
 });
