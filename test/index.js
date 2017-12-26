@@ -1,11 +1,11 @@
 const assert = require('power-assert')
-const {
-  urlHandler,
-  hostHandler,
-  createUrl,
-  addQueryAttacher,
-  addQuery
-} = require('..')
+const dumbUrlHandler = require('..')
+
+const urlHandler = dumbUrlHandler.urlHandler
+const hostHandler = dumbUrlHandler.hostHandler
+const createUrl = dumbUrlHandler.createUrl
+const addQueryAttacher = dumbUrlHandler.addQueryAttacher
+const addQuery = dumbUrlHandler.addQuery
 
 describe('url-handler', function() {
   describe('urlHandler', function() {
