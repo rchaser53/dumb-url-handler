@@ -1,4 +1,4 @@
-![build_status](https://travis-ci.org/rchaser53/url-handler.svg?branch=master)
+![build_status](https://travis-ci.org/rchaser53/dumb-url-handler.svg?branch=master)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 # what's this?
