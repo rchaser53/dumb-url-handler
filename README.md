@@ -14,7 +14,7 @@ above version 4.3.2(this version is used by AWS Lambda)
 use like below.
 
 ```javascript
-const { creatUrl, addQuery } = require('dumb-url-handler')
+const { createUrl, addQuery } = require('dumb-url-handler')
 
 createUrl('http://localhost', ['yyy.js'])
 // http://localhost/yyy.js
