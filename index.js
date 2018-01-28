@@ -28,3 +28,16 @@ exports.addQuery = function(url, queryObj) {
 	}, [])
 	return '' + baseUrl + queryStringArray.join('&')
 }
+
+exports.parseQuery = function(url) {
+	const queryString = url.replace(/^(\s|\S)*\?/, '')
+	const queries = queryString.split('&')
+	
+	return queries.reduce(function(stack, next) {
+		const queryTupple = next.split('=')
+		if (queryTupple.length !== 2) return stack
+
+		stack[queryTupple[0]] = queryTupple[1]
+		return stack
+	}, {})
+}

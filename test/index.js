@@ -6,6 +6,7 @@ const hostHandler = dumbUrlHandler.hostHandler
 const createUrl = dumbUrlHandler.createUrl
 const addQueryAttacher = dumbUrlHandler.addQueryAttacher
 const addQuery = dumbUrlHandler.addQuery
+const parseQuery = dumbUrlHandler.parseQuery
 
 describe('url-handler', function() {
 	describe('urlHandler', function() {
@@ -88,6 +89,30 @@ describe('url-handler', function() {
 					ghi: 'nyan'
 				}),
 				'http://localhost/yyy.js?abc=123&ghi=nyan'
+			)
+		})
+	})
+
+	describe('parseQuery', function() {
+		it('should return query as javascript object like "{key: value}"', function() {
+			assert.deepEqual(
+				parseQuery('http://localhost/yyy.js'),
+				{}
+			)
+
+			assert.deepEqual(
+				parseQuery('http://localhost/yyy.js?'),
+				{}
+			)
+
+			assert.deepEqual(
+				parseQuery('http://localhost/yyy.js?abc=123'),
+				{ abc: '123' }
+			)
+
+			assert.deepEqual(
+				parseQuery('http://localhost/yyy.js?abc=123&def=456'),
+				{ abc: '123', def: '456' }
 			)
 		})
 	})
