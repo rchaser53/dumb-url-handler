@@ -21,4 +21,7 @@ createUrl('http://localhost', ['yyy.js'])
 
 addQuery('http://localhost/yyy.js', { query1: 'value', query2: 'value2' })
 // http://localhost/yyy.js?query1=value&query2=value2
+
+parseQuery('http://localhost/yyy.js?query1=value1&query2=value2')
+// { query1: 'value1', query2: 'value2' }
 ```

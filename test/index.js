@@ -95,59 +95,29 @@ describe('url-handler', function() {
 
 	describe('parseQuery', function() {
 		it('should return query as javascript object like "{key: value}"', function() {
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js'),
-				{}
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js'), {})
 
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?'),
-				{}
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?'), {})
 
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?abc=123'),
-				{ abc: '123' }
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?abc=123'), { abc: '123' })
 
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?abc=123&def=456'),
-				{ abc: '123', def: '456' }
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?abc=123&def=456'), { abc: '123', def: '456' })
 		})
 	})
 
 	describe('parseQuery', function() {
 		it('should emit warning and return {} when query is invalid', function() {
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?a'),
-				{}
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?a'), {})
 
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?a='),
-				{ a: '' }
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?a='), { a: '' })
 
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?a=b&'),
-				{ a: 'b' }
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?a=b&'), { a: 'b' })
 
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?a=b&c'),
-				{ a: 'b' }
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?a=b&c'), { a: 'b' })
 
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?a=b&c='),
-				{ a: 'b', c: '' }
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?a=b&c='), { a: 'b', c: '' })
 
-			assert.deepEqual(
-				parseQuery('http://localhost/yyy.js?a=b&c&d=e'),
-				{ a: 'b', d: 'e' }
-			)
+			assert.deepEqual(parseQuery('http://localhost/yyy.js?a=b&c&d=e'), { a: 'b', d: 'e' })
 		})
 	})
 })
