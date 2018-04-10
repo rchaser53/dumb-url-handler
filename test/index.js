@@ -37,6 +37,15 @@ describe('url-handler', function() {
 			assert.equal(createUrl('http://localhost', ['yyy.js']), 'http://localhost/yyy.js')
 			assert.equal(createUrl('http://localhost/', ['yyy.js']), 'http://localhost/yyy.js')
 			assert.equal(createUrl('http://localhost:3000', ['yyy', 'zzz.js']), 'http://localhost:3000/yyy/zzz.js')
+    })
+    
+		it('should return any input', function() {
+			assert.equal(createUrl('http://localhost', ['']), 'http://localhost')
+			assert.equal(createUrl('http://localhost', [null]), 'http://localhost')
+      assert.equal(createUrl('http://localhost:3000', [undefined]), 'http://localhost:3000')
+      assert.equal(createUrl('http://localhost:3000', [1]), 'http://localhost:3000/1')
+      assert.equal(createUrl('http://localhost:3000', [true]), 'http://localhost:3000/true')
+      assert.equal(createUrl('http://localhost:3000', [{}]), 'http://localhost:3000/[object Object]')
 		})
 	})
 

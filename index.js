@@ -2,6 +2,8 @@
 exports.__esModule = true
 
 exports.urlHandler = function(targetPath) {
+  targetPath = targetPath || ''
+  targetPath = targetPath.toString()
 	return targetPath.replace(/^\/?/, '/').replace(/\/?$/, '')
 }
 
