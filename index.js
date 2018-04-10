@@ -23,8 +23,8 @@ exports.addQueryAttacher = function(url) {
 exports.addQuery = function(url, queryObj) {
 	var baseUrl = exports.addQueryAttacher(url)
 	var queryStringArray = Object.keys(queryObj).reduce(function(stack, key) {
-		if (queryObj[key] == null) return stack
-		return stack.concat(key + '=' + queryObj[key])
+		var queryValue = queryObj[key] != null ? queryObj[key] : ''
+		return stack.concat(key + '=' + queryValue)
 	}, [])
 	return '' + baseUrl + queryStringArray.join('&')
 }

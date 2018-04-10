@@ -72,14 +72,14 @@ describe('url-handler', function() {
 				addQuery('http://localhost/yyy.js', {
 					abc: null
 				}),
-				'http://localhost/yyy.js?'
+				'http://localhost/yyy.js?abc='
 			)
 
 			assert.equal(
 				addQuery('http://localhost/yyy.js', {
 					abc: undefined
 				}),
-				'http://localhost/yyy.js?'
+				'http://localhost/yyy.js?abc='
 			)
 
 			assert.equal(
@@ -88,7 +88,7 @@ describe('url-handler', function() {
 					def: undefined,
 					ghi: 'nyan'
 				}),
-				'http://localhost/yyy.js?abc=123&ghi=nyan'
+				'http://localhost/yyy.js?abc=123&def=&ghi=nyan'
 			)
 		})
 	})
