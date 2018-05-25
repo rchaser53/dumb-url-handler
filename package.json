@@ -1,6 +1,6 @@
 {
 	"name": "dumb-url-handler",
-	"version": "1.2.1",
+	"version": "1.3.0",
 	"description": "use it on AWS lambda",
 	"main": "index.js",
 	"scripts": {
@@ -11,7 +11,7 @@
 	"repository": "https://github.com/rchaser53/url-handler.git",
 	"keywords": [],
 	"author": "rchaser53",
-	"license": "MIC",
+	"license": "MIT",
 	"devDependencies": {
 		"intelli-espower-loader": "^1.0.1",
 		"mocha": "^4.0.1",
